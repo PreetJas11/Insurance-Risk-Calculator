@@ -13,3 +13,4 @@ env/
 
 # Ignore artifact directory
 .gemini/
+inspo/
