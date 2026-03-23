@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 
 CONFIG_FILE = ".actuary-config.json"
-# secret_abc123XYZ"
+# secret_abc123XYZ
 def setup_workspace():
     """
     Initializes the fundamental Notion structure by calling the Notion MCP server.
@@ -59,3 +59,26 @@ def get_history(limit=10):
         f"| {date_str} | Life | 55         | $145 CAD    | $190 CAD     | 55 Female Nonsmoker | [view] |\n"
     )
     return table
+def automated_sync(file_path):
+    """
+    Parses a markdown report file and automatically syncs it to Notion.
+    """
+    if not os.path.exists(file_path):
+        return None
+        
+    with open(file_path, "r") as f:
+        content = f.read()
+        
+    # Very simple mock parsing of risk score from the markdown
+    import re
+    score_match = re.search(r"Risk Score:?\s*(\d+)", content, re.IGNORECASE)
+    score = int(score_match.group(1)) if score_match else 50
+    
+    url = save_quote({"overall_score": score})
+    return url
+
+if __name__ == "__main__":
+    # If called directly with a path
+    import sys
+    if len(sys.argv) > 1:
+        print(automated_sync(sys.argv[1]))

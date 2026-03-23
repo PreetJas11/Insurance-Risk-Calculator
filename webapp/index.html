@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actuary | Simply Smarter Insurance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">▲</div>
+                Actuary
+            </div>
+            <div class="nav-links">
+                <a href="#calculator">Calculator</a>
+                <a href="#result-section">Results</a>
+            </div>
+            <button class="btn-pill">Connect Notion</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-simple">
+            <div class="hero-content">
+                <div class="badge">Actuarial Intelligence</div>
+                <h1>Simply Smarter <br><span>Risk Analysis.</span></h1>
+                <p>Calculate life and auto insurance risk with real-time data integration. No complexity, just the data you need.</p>
+            </div>
+        </section>
+
+        <section id="calculator" class="calculator-minimal">
+            <div class="calc-card">
+                <div class="tabs-minimal">
+                    <button class="tab-btn active" data-type="auto">Auto Risk</button>
+                    <button class="tab-btn" data-type="life">Life Risk</button>
+                </div>
+                
+                <form id="risk-form">
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label>Age</label>
+                            <input type="number" id="age" placeholder="25" required>
+                        </div>
+                        <div id="auto-fields" class="input-subgrid">
+                            <div class="input-group">
+                                <label>Province/State</label>
+                                <input type="text" id="location" placeholder="Ontario">
+                            </div>
+                            <div class="input-group">
+                                <label>Vehicle</label>
+                                <select id="vehicle">
+                                    <option value="sedan">Sedan</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="truck">Truck</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="life-fields" class="input-subgrid hidden">
+                            <div class="input-group">
+                                <label>Sex</label>
+                                <select id="sex">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="input-group-check">
+                                <input type="checkbox" id="smoker">
+                                <label for="smoker">Smoker</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Generate Report &rarr;</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="result-section" class="results hidden">
+            <div class="results-card">
+                <div class="results-layout">
+                    <div class="score-display">
+                        <div class="gauge-wrap">
+                            <svg viewBox="0 0 100 100" class="gauge-svg">
+                                <circle cx="50" cy="50" r="45" class="bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="fill" id="overall-gauge"></circle>
+                            </svg>
+                            <span id="overall-score">0</span>
+                        </div>
+                        <h3>Overall Score</h3>
+                    </div>
+                    
+                    <div class="details-display">
+                        <div class="factors-box">
+                            <h4>Risk Factors</h4>
+                            <ul id="risk-factors"></ul>
+                        </div>
+                        <div class="premium-box">
+                            <h4>Estimated Premium</h4>
+                            <div id="premium-range">$0 - $0</div>
+                            <p class="currency">CAD / Year</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="timestamp" class="timestamp"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-simple">
+        <p>&copy; 2026 Actuary by Claude Code. Built for speed and clarity.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Fallback for hero image if it fails to generate
+        document.getElementById('hero-img-fallback').onerror = function() {
+            this.src = "https://img.icons8.com/plasticine/400/money-bag.png";
+            this.style.maxWidth = "200px";
+            this.style.margin = "0 auto";
+        };
+    </script>
+</body>
+</html>
