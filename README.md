@@ -493,11 +493,5 @@ This project was built in 5 stages using Claude Code as the primary development 
 | 4 | Excalidraw MCP | `diagram.py` — auto-generates visual risk charts |
 | 5 | Notion MCP | `notion_sync.py` — saves every quote to a structured database |
 
-Every line of code was written by Claude Code through conversational prompts.
 
 ---
-
-## Acknowledgements
-
-- [NHTSA](https://api.nhtsa.gov) — free vehicle safety data
-- [CDC WONDER](https://wonder.cdc.gov) — free mortality statistics
