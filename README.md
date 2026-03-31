@@ -6,7 +6,7 @@ Built as a learning project to explore **Antigravity** and **Claude Code** featu
 
 ---
 
-## ✨ Features
+## Features
 
 - **Auto insurance quotes** — pulls vehicle complaint data from NHTSA
 - **Life insurance estimates** — uses CDC mortality statistics
@@ -18,7 +18,7 @@ Built as a learning project to explore **Antigravity** and **Claude Code** featu
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Quick Start](#-quick-start)
 - [Project Structure](#-project-structure)
@@ -32,7 +32,7 @@ Built as a learning project to explore **Antigravity** and **Claude Code** featu
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -62,7 +62,7 @@ Or inside Claude Code:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 actuary/
@@ -98,7 +98,7 @@ actuary/
 
 ---
 
-## 💻 Usage — Slash Commands
+##  Usage — Slash Commands
 
 All commands are available inside **Claude Code** (`claude` in your terminal).
 
@@ -129,8 +129,6 @@ Top Risk Factors:
   2. Age bracket (35-40 moderate risk)
   3. Ontario collision frequency
 
-📊 Visual breakdown:  https://excalidraw.com/#json=...
-📝 Saved to Notion:   https://notion.so/Actuary/...
 ✓  Report archived:   reports/2026-03-22-14-30-quote.md
 ```
 
@@ -189,9 +187,7 @@ Lists all available commands with argument formats.
 
 ---
 
-## 🌐 Data Sources
-
-All data is **free, public, and requires no authentication**.
+## Data Sources
 
 | Source | Data Used | URL |
 |--------|-----------|-----|
@@ -202,7 +198,7 @@ All data is **free, public, and requires no authentication**.
 
 ---
 
-## 🛠 Claude Code Features
+## Claude Code Features
 
 This project was built using Claude Code and demonstrates four core features:
 
@@ -262,7 +258,7 @@ Three hooks run automatically:
 
 ---
 
-## ⚙️ GitHub Actions Workflows
+##  GitHub Actions Workflows
 
 Three workflows are included in `.github/workflows/`.
 
@@ -446,7 +442,7 @@ jobs:
 
 ---
 
-## 🔒 Security
+## Security
 
 - **`.env` files** are protected by a PreToolUse hook — Claude cannot read them even if asked
 - **`data/` folder** is gitignored and hook-protected — CSV files never leave your machine
@@ -454,7 +450,7 @@ jobs:
 - **Workflow permissions** — each workflow uses the minimum permissions required (`contents: read` for reviews, `contents: write` only for issue implementation)
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment variables (`.env`)
 
@@ -485,7 +481,7 @@ This creates:
 
 ---
 
-## 📖 How It Was Built
+## How It Was Built
 
 This project was built in 5 stages using Claude Code as the primary development tool:
 
@@ -497,13 +493,7 @@ This project was built in 5 stages using Claude Code as the primary development 
 | 4 | Excalidraw MCP | `diagram.py` — auto-generates visual risk charts |
 | 5 | Notion MCP | `notion_sync.py` — saves every quote to a structured database |
 
-Every line of code was written by Claude Code through conversational prompts — no manual coding required.
-
----
-
-## 📄 License
-
-MIT — see [LICENSE](LICENSE) for details.
+Every line of code was written by Claude Code through conversational prompts.
 
 ---
 
@@ -511,6 +501,3 @@ MIT — see [LICENSE](LICENSE) for details.
 
 - [NHTSA](https://api.nhtsa.gov) — free vehicle safety data
 - [CDC WONDER](https://wonder.cdc.gov) — free mortality statistics
-- [Anthropic Claude Code](https://docs.claude.com) — the AI that built this
-- [Excalidraw](https://excalidraw.com) — free diagram tool
-- [Notion](https://notion.so) — database and note storage
